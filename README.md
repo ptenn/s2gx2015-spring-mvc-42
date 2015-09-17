@@ -19,3 +19,11 @@ Run `App.java`, visit [http://localhost:8080](http://localhost:8080), experiment
 Run `CrossDomainApp.java`, visit [http://localhost:9000](http://localhost:9000), experiment with streams at 8080. Next modify the CORS configuration at 8080 (e.g. `SseEmitterController` and in `App.java`) and try again.
 
 Run [Client](webmvc-app/src/main/java/s2gx2015/Client.java) to connect to the STOMP / WebSocket stream from Java.
+
+# Modifications
+
+I am using the Spring One 2GX code created by Rossen Stoyanchev and attempting to communicate with the STOMP/WebSocket endpoint via AngularJS Single Page Application.
+
+The existing index.html from the presentation uses jQuery and changes made to DOM elements via jQuery would fall outside Angular's digest loop.
+
+Thus I am looking to create a sample AngularJS client that uses an Angular-aware WebSocket client plugin.
