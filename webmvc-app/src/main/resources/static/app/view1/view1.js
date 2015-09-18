@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute', 'restangular'])
+angular.module('myApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ngRoute', 'restangular'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', '$http', 'Restangular', function($scope, $http, Restangular) {
+.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
 
     var eventSource = null;
     var socket = null;
