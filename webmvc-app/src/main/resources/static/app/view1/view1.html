@@ -1,1 +1,35 @@
 <p>This is the partial for view 1.</p>
+<p>Check console for streaming output...</p>
+<hr>
+<h3>SSE Stream:</h3>
+<p>
+  <button id="sseStart" ng-click="sseStart()">Start</button>
+  <button id="sseStop" ng-click="sseStop()">Stop</button>
+</p>
+
+<h3>WebSocket Stream:</h3>
+<p>
+  <button id="webSocketStart">Start</button>
+  <button id="webSocketStop">Stop</button>
+</p>
+
+<h3>WebSocket Stream Consumer:</h3>
+<p>
+  <select id="transports" size="1">
+    <option value="auto">Select SockJS Transport</option>
+    <option value="websocket">websocket</option>
+    <option value="xhr-streaming">xhr-streaming</option>
+    <option value="xhr-polling">xhr-polling</option>
+    <option value="eventsource">eventsource</option>
+    <option value="iframe-eventsource">iframe-eventsource</option>
+    <option value="iframe-htmlfile">iframe-htmlfile</option>
+    <option value="iframe-xhr-polling">iframe-xhr-polling</option>
+    <option value="jsonp-polling">jsonp-polling</option>
+    <option value="xdr-streaming">xdr-streaming</option>
+    <option value="xdr-polling">xdr-polling</option>
+  </select>
+</p>
+<p>
+  <button id="webSocketConsumerStart" ng-click="webSocketConsumerStart()">Start</button>
+  <button id="webSocketConsumerStop" ng-click="webSocketConsumerStop()">Stop</button>
+</p>
