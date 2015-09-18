@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.view1', ['ngRoute', 'restangular'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', function($scope) {
+.controller('View1Ctrl', ['$scope', '$http', 'Restangular', function($scope, $http, Restangular) {
 
     var eventSource = null;
     var socket = null;
@@ -42,14 +42,13 @@ angular.module('myApp.view1', ['ngRoute'])
       }
     };
 
-    //$scope.webSocketStart = function() {
-    //  //$.post( "/interval");
-    //};
-    //
-    //$( "#webSocketStop" ).bind( "click", function() {
-    //  $.ajax({ url: "/interval", method: 'DELETE' });
-    //});
-    //
+    $scope.webSocketStart = function() {
+       $http.post('/interval', {});
+    };
+
+    $scope.webSocketStop = function() {
+      $http.delete('/interval');
+    };
 
     /**
      * Port of jQuery webSocketConsumerStart to function on Angular Controller Scope.
